@@ -101,3 +101,12 @@
 .post-text {
     margin: 15px 0;
 }
+
+.delete-post{
+    padding: 0 30px;
+    background: red;
+    color: #fff;
+    border: 0;
+    font-weight: bold;
+    border-radius: 10px;
+}

@@ -40,6 +40,11 @@ new Vue(
                     date: currentDate,
                 });
                 this.newPostText = "";
+            },
+            deletePost(post){
+                if(this.myProfile.posts.includes(post)){
+                    this.myProfile.posts.splice(this.myProfile.posts.indexOf(post),1);
+                }
             }
         }
     }

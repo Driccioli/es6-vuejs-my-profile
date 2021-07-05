@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Social Profile</title>
+    <title>My Social Profile (Vue)</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +48,8 @@
                 <div v-if = "Object.keys(post).includes('mediaPath')" class="post-media">
                     <img :src='post.mediaPath' alt="media" />
                 </div>
+
+                <button @click="deletePost(post)" class="delete-post">Cancella post</button>
 
             </div>
 
