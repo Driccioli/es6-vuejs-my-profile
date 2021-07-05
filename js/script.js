@@ -37,8 +37,8 @@ userDetailHtml.innerHTML = `
 // in vuejs sarà: {{ myProfile.details.name }}
 
 var postListHtml = document.querySelector(".post-list")
-
-data.myProfile.posts.forEach((post) => {
+var reversePosts = data.myProfile.posts.slice().reverse();
+reversePosts.forEach((post) => {
 
     // prepariamo la parte interna dell'elemento html .post
     let postHtml = `
@@ -70,3 +70,33 @@ data.myProfile.posts.forEach((post) => {
 
     postListHtml.innerHTML += `<div class="post"> ${postHtml} </div>`
 }) 
+
+
+
+function createPost(){
+    var postInput = document.getElementById("postInput");
+    const currentDate = dayjs().format("DD-MM-YYYY")
+    const newPost = {
+        text: postInput.value,
+        date: currentDate,
+    };
+    
+
+    postListHtml.innerHTML = `
+    <div class="post">
+        <div class="post-details"> 
+            <div class="user-pic">
+                <img src="${data.myProfile.details.pic}" alt="user pic">
+            </div>
+            <div class="details">
+                <div class="user-name">${data.myProfile.details.name} ${data.myProfile.details.surname}</div>
+                <div class="post-date">${newPost.date}</div>
+            </div>
+        </div> 
+        <div class="post-text">
+            ${newPost.text}
+        </div>
+    </div>
+` + postListHtml.innerHTML;
+    postInput.value = "";
+};

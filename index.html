@@ -22,8 +22,8 @@
         </div>
 
         <div class="new-post">
-            <textarea placeholder="A cosa stai pensando?"></textarea>
-            <button class="send">CREA</button>
+            <textarea placeholder="A cosa stai pensando?" id="postInput"></textarea>
+            <button onclick="createPost()" class="send">CREA</button>
         </div>
 
         <div class="post-list">
@@ -52,5 +52,7 @@
 
     </div>
     <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
 </body>
 </html>
